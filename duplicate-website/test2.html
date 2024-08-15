@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .main-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 100px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .main-section .text-content {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .main-section .text-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .main-section .text-content h1 span {
+            color: #28a745; /* Green color for UI/UX Design */
+        }
+
+        .main-section .text-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .main-section .text-content .email-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .main-section .text-content .email-input input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main-section .text-content .email-input button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-section .text-content .email-input button:hover {
+            background-color: #28a745;
+        }
+
+        .main-section .features {
+            display: flex;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+
+        .main-section .features .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .main-section .features .feature img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .main-section .image-content {
+            flex: 1;
+            max-width: 50%;
+            text-align: right;
+        }
+
+        .main-section .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="main-section">
+        <div class="text-content">
+            <!-- <p><img src="award-icon.png" alt="Award" style="vertical-align: middle; margin-right: 5px;"> Award-winning digital services</p> -->
+            <h1>Creative studio focused on <span>UI/UX Design</span></h1>
+            <p>From concept to execution, we deliver web designs that make an impact. Let your brand shine with our innovative and visually stunning websites.</p>
+            <div class="email-input">
+                <input type="email" placeholder="Enter your email address">
+                <button>Start trial!</button>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <img src="support-icon.png" alt="Support">
+                    <span><h4>24/7 Support</h4><br>We're always here to help</span>
+                </div>
+                <div class="feature">
+                    <img src="award-icon.png" alt="Award">
+                    <span><h4>Award Winning agency</h4><br>You are in safe hands</span>
+                </div>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="main-image.jpg" alt="Creative Studio Image">
+        </div>
+    </section>
+
+</body>
+</html>

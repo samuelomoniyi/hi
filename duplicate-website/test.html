@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Dropdowns</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .header nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .header nav ul li a:hover {
+            color: #28a745;
+        }
+
+        /* Dropdown menu styling */
+        .header nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            list-style: none;
+            min-width: 150px;
+        }
+
+        .header nav ul li ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header nav ul li ul li a {
+            padding: 8px 20px;
+            display: block;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .header nav ul li ul li a:hover {
+            background-color: #e4f5e8;
+            color: #28a745;
+        }
+
+        /* Show dropdown on hover */
+        .header nav ul li:hover > ul {
+            display: block;
+        }
+
+        .header .actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .actions a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .header .actions a:hover {
+            color: #28a745;
+        }
+
+        .header .actions .btn-buy {
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header .actions .btn-buy:hover {
+            background-color: #218838;
+        }
+
+        .main{
+            text-align: justify;
+            
+            
+        }
+        .main img{
+            float: right;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            width: 600px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* main section */
+        .main-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 100px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .main-section .text-content {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .main-section .text-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .main-section .text-content h1 span {
+            color: #28a745; /* Green color for UI/UX Design */
+        }
+
+        .main-section .text-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .main-section .text-content .email-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .main-section .text-content .email-input input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main-section .text-content .email-input button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-section .text-content .email-input button:hover {
+            background-color: #28a745;
+        }
+
+        .main-section .features {
+            display: flex;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+
+        .main-section .features .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .main-section .features .feature img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .main-section .image-content {
+            flex: 1;
+            max-width: 50%;
+            text-align: right;
+        }
+
+        .main-section .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo"> <!-- Replace with your logo image -->
+            <h1>Mizzle</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Demos</a>
+                    <ul>
+                        <li><a href="#">Classic Default</a></li>
+                        <li><a href="#">Creative Agency</a></li>
+                        <li><a href="#">Digital Agency</a></li>
+                        <li><a href="#">Design Agency</a></li>
+                        <li><a href="#">SEO Agency</a></li>
+                        <li><a href="#">Product Landing</a></li>
+                        <li><a href="#">Mobile App Showcase</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pages</a>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact V.1</a></li>
+                        <li><a href="#">Contact V.2</a></li>
+                        <li><a href="#">Saass Pages</a></li>
+                        <li><a href="#">Source</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Authentication</a></li>
+                        <li><a href="#">Accounts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Portfolio</a>
+                    <ul>
+                        <li><a href="#">Portfolio Mansory</a></li>
+                        <li><a href="#">Portfolio Showcase</a></li>
+                        <li><a href="#">List</a></li>
+                        <li><a href="#">Case Study V.1</a></li>
+                        <li><a href="#">Case Study V.2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Megamenu</a>
+                    <ul>
+                        <li><a href="#">Market Research</a></li>
+                        <li><a href="#">Advertising</a></li>
+                        <li><a href="#">Consumer Behaviour</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Marketing Ethics</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact us</a>
+                    <ul>
+                        <li><a href="#">Contact us 1</a></li>
+                        <li><a href="#">Contact us 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="#" class="theme-toggle"><img src="darkmode.png" alt="Dark Mode"> <!-- Replace with dark mode icon --></a>
+            <a href="#">Sign up</a>
+            <a href="#" class="btn-buy">Buy now!</a>
+        </div>
+    </header>
+
+    <!-- second section -->
+
+    <section class="main-section">
+        <div class="text-content">
+            <!-- <p><img src="award-icon.png" alt="Award" style="vertical-align: middle; margin-right: 5px;"> Award-winning digital services</p> -->
+            <h1>Creative studio focused on <span>UI/UX Design</span></h1>
+            <p>From concept to execution, we deliver web designs that make an impact. Let your brand shine with our innovative and visually stunning websites.</p>
+            <div class="email-input">
+                <input type="email" placeholder="Enter your email address">
+                <button>Start trial!</button>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <img src="support-icon.png" alt="Support">
+                    <span><h4>24/7 Support</h4><br>We're always here to help</span>
+                </div>
+                <div class="feature">
+                    <img src="award-icon.png" alt="Award">
+                    <span><h4>Award Winning agency</h4><br>You are in safe hands</span>
+                </div>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="main-image.jpg" alt="Creative Studio Image">
+        </div>
+    </section>
+</body>
+</html>
